@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 15:04:44 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 15:12:19 by jlu              ###   ########.fr       */
+/*   Created: 2023/10/25 15:58:23 by jlu               #+#    #+#             */
+/*   Updated: 2023/10/25 17:08:03 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+void    ft_bzero(void *s, size_t n)
 {
-    if (c >= 'a' && c <= 'z')
-        return (c - 32);
-    else
-        return (c);
+    size_t  i;
+    
+    i = 0;
+    while (i < n)
+    {
+        ((char*)s)[i] = '\0';
+        i++;
+    }
 }
 
-int main(void)
-{
-    char    c = '%';
-
-    printf("The current character is: %c\n", c);
-    printf("After ft_toupper: %c\n", ft_toupper(c));
-    return(0);
-}
+//int main(void)
+//{
+//    char str[10] = "ABCDEFG";
+//    printf("\nBefore ft_bzero(): %s\n", str);
+//	ft_bzero(str, sizeof(str));
+//	printf("After ft_bzero(): %s", str);
+//	return (0);
+//}

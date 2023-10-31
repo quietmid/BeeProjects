@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 14:49:43 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 14:53:19 by jlu              ###   ########.fr       */
+/*   Created: 2023/10/30 16:53:23 by jlu               #+#    #+#             */
+/*   Updated: 2023/10/30 17:29:56 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+void    *ft_memchr(const void *s, int c, size_t n)
 {
-    int i;
-    char *str;
+    size_t  i;
+    char    *str;
 
-    str = (char *)s;
+    str = ((char *)s);
     i = 0;
-    while (str[i] != '\0')
+    while (str[i] != '\0' && i < n)
     {
         if (str[i] == c)
         {
@@ -34,10 +34,20 @@ int main(void)
 {
    const char str[] = "https://www.tutorialspoint.com";
    const char ch = '.';
-   char    *ret;
+   char    *pos = ft_memchr(str, ch, ft_strlen((char *)str) * sizeof(char));
+   
+   if (pos == NULL)
+   {
+        printf("Character not found!\n");
+   }
+   else
+   {
+   printf("pos[0] = %c\n", pos[0]);
+   printf("pos[1] = %c\n", pos[1]);
+   printf("pos: %s\n", pos);
+   }
 
-   ret = ft_strchr(str,ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
+//   char *nexttest = ft_memchr(str, ch, (ft_strlen(str) * sizeof(char)));
+//   printf("Next Test: %s\n", nexttest);
    return(0);
 }

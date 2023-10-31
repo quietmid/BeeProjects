@@ -1,10 +1,22 @@
-#include<stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/30 15:23:26 by jlu               #+#    #+#             */
+/*   Updated: 2023/10/30 15:33:14 by jlu              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
     char    *str1;
     char    *str2;
-    int     i;
+    size_t  i;
 
     str1 = (char *)s1;
     str2 = (char *)s2;
@@ -23,11 +35,11 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int main (void) 
 {
-    char str1[15] = "ABCdef";
-    char str2[15] = "ABCDEF";
+    char str1[15] = "ABCDEf";
+    char str2[15] = "ABCeeF";
     int result;
 
-   result = ft_strncmp(str1, str2, 4);
+   result = ft_strncmp(str1, str2, 5);
     if (result < 0) 
     {
       printf("str1 is less than str2\n");

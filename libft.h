@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 15:04:44 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 15:12:19 by jlu              ###   ########.fr       */
+/*   Created: 2023/10/24 22:27:36 by jlu               #+#    #+#             */
+/*   Updated: 2023/10/30 15:15:56 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int ft_toupper(int c)
-{
-    if (c >= 'a' && c <= 'z')
-        return (c - 32);
-    else
-        return (c);
-}
+# include <stdlib.h>
+# include <stdio.h> // remember to take this out
+# include <string.h> // remember to take this out
 
-int main(void)
-{
-    char    c = '%';
+void	*ft_memset(void *b, int c, size_t len);
+void    *ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
+size_t	ft_strlen(char *str);
 
-    printf("The current character is: %c\n", c);
-    printf("After ft_toupper: %c\n", ft_toupper(c));
-    return(0);
-}
+#endif

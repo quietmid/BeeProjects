@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 15:04:44 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 15:12:19 by jlu              ###   ########.fr       */
+/*   Created: 2023/10/24 11:06:38 by jlu               #+#    #+#             */
+/*   Updated: 2023/10/25 11:56:17 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int ft_toupper(int c)
+int	ft_isalpha(int n)
 {
-    if (c >= 'a' && c <= 'z')
-        return (c - 32);
-    else
-        return (c);
+	if (n <= 'A' && n >= 'Z')
+	{
+		return (1);
+	}
+	else if (n >= 'a' && n <= 'z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
 
-int main(void)
-{
-    char    c = '%';
+// int main(void)
+// {
+// 	char	c;
 
-    printf("The current character is: %c\n", c);
-    printf("After ft_toupper: %c\n", ft_toupper(c));
-    return(0);
-}
+// 	c = '5';
+// 	printf("%d", ft_isalpha(c));
+// 	return (0);
+// }

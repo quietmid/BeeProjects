@@ -1,27 +1,26 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/30 15:40:29 by jlu               #+#    #+#             */
+/*   Updated: 2023/10/30 16:46:20 by jlu              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t  ft_strlen(const char *s)
-{
-    size_t  i;
-
-    i = 0;
-    while (s[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
-}
+#include "libft.h"
 
 size_t  ft_strlcat(char * restrict dest, const char * restrict src, size_t destsize)
 {
 	size_t	d_len;
 	size_t 	s_len;
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
-	d_len = ft_strlen(dest);
-	s_len = ft_strlen(src);
+	d_len = ft_strlen((char*)dest);
+	s_len = ft_strlen((char*)src);
 
 	if (destsize == 0 || !dest)
 		return (0);
@@ -29,7 +28,7 @@ size_t  ft_strlcat(char * restrict dest, const char * restrict src, size_t dests
 	j = 0;
 	while (dest[i] != '\0')
 		i++;
-	while (src[j] != '\0' && j < destsize - 1)
+	while (src[j] != '\0' && j < (destsize - 1))
 	{
 		dest[i + j] = src[j];
 		j++;
@@ -48,8 +47,3 @@ int	main(void)
 	printf("Strlcat result is: %zu\n", res);
 	return (0);
 }
-/*
-strlcat() appends string src to the end of dst.  It will append at most dstsize - strlen(dst) - 1 characters.  It will then NUL-terminate,
-     unless dstsize is 0 or the original dst string was longer than dstsize (in practice this should not happen as it means that either dstsize
-     is incorrect or that dst is not a proper string).
-*/
