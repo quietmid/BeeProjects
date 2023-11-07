@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:35:41 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 18:27:55 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/01 12:43:56 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,4 @@ int ft_memcmp(const void *str1, const void *str2, size_t n)
     }
     result = (s1[i] - s2[i]);
     return (result);
-}
-int main(void)
-{
-    char str1[] = "";
-    char str2[] = "";
-    int res = ft_memcmp(str1, str2, 3);
-
-    if (res > 0)
-        printf("String1 is greater than String2 by %d.\n", res);
-    else if (res < 0)
-        printf("String1 is lesser than String2 by %d.\n", res);
-    else
-        printf("String1 and String2 are equal by %d.\n", res);
-    return (0);
 }

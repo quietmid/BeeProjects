@@ -6,13 +6,13 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 11:06:38 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/25 11:56:17 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/01 16:45:12 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int n)
 {
-	if (n <= 'A' && n >= 'Z')
+	if (n >= 'A' && n <= 'Z')
 	{
 		return (1);
 	}
@@ -25,12 +25,3 @@ int	ft_isalpha(int n)
 		return (0);
 	}
 }
-
-// int main(void)
-// {
-// 	char	c;
-
-// 	c = '5';
-// 	printf("%d", ft_isalpha(c));
-// 	return (0);
-// }

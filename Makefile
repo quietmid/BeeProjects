@@ -6,11 +6,11 @@
 #    By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:24:19 by jlu               #+#    #+#              #
-#    Updated: 2023/10/31 17:13:29 by jlu              ###   ########.fr        #
+#    Updated: 2023/11/07 14:06:14 by jlu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME: libft.a
+NAME = libft.a
 
 SRC = ft_atoi.c \
 	  ft_bzero.c \
@@ -32,19 +32,37 @@ SRC = ft_atoi.c \
 	  ft_strnstr.c \
 	  ft_strrchr.c \
 	  ft_tolower.c \
-	  ft_toupper.c 
+	  ft_toupper.c \
+	  ft_calloc.c \
+	  ft_strdup.c \
+	  ft_substr.c \
+	  ft_strjoin.c \
+	  ft_strtrim.c \
+	  ft_split.c \
 
-CC = hcc
+BSRC = 
+
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-OBJECTS = $(FUNC:.c=.o ) 
+OBJECTS = $(SRC:.c=.o)
+
+BOBJECTS = $(BSRC:.c=.o)
 
 all: $(NAME)
 
-compile:
+$(NAME): $(OBJECTS) $(BOBJECTS)
+	$(cc) $(CFLAGS) -c $(SRC)
+	$(cc) $(CFLAGS) -c $(BSRC)
+	ar rc $(NAME) $(OBJECTS) $(BOBJECTS)
+	ranlib $(NAME)
 
 clean: 
+	rm -f $(OBJECTS) $(BOBJECTS)
 
-fclean:
+fclean: clean
+	rm -f $(NAME)
+	
+re: fclean all 
 
-re:
+.PHONY: all clean fclean re

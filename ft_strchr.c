@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:49:43 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 14:53:19 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/07 17:15:25 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,11 @@ char    *ft_strchr(const char *s, int c)
 
     str = (char *)s;
     i = 0;
-    while (str[i] != '\0')
-    {
-        if (str[i] == c)
-        {
-            return (&str[i]);
-        }
+    while (str[i] != '\0' && str[i] != c)
         i++;
+    if (str[i] == c || (c == '\0' && str[i] == '\0'))
+    {
+        return (&str[i]);
     }
     return (NULL);
-}
-
-int main(void)
-{
-   const char str[] = "https://www.tutorialspoint.com";
-   const char ch = '.';
-   char    *ret;
-
-   ret = ft_strchr(str,ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   return(0);
 }

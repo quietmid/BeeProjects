@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:59:25 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/31 14:11:15 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/01 12:35:55 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,4 @@ int ft_atoi(const char *str)
         str++;
     }
     return (nb * i);
-}
-int main(void)
-{
-    char str[] = " \n\t\r\v---+-+-21356age6577";
-    int result;
-
-    printf("the string is: %s\n", str);
-    result = ft_atoi(str);
-    printf("the integer is: %d", result);
-    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:13:39 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 15:17:20 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/01 12:49:55 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,4 @@ char    *ft_strrchr(const char *s, int c)
         i--;
     }
     return (NULL);
-}
-
-int main(void)
-{
-    const char  str[] = "httttps://yyy.wowlifesgreat.org";
-    const char  ch = '.';
-    char *ret;
-
-    ret = ft_strrchr(str, ch);
-
-    printf("String after |%c| is - |%s|\n", ch, ret);
 }
