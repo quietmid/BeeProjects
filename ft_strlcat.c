@@ -6,33 +6,35 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:40:29 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/01 12:46:03 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/08 19:28:17 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char * restrict dest, const char * restrict src, size_t destsize)
+size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	d_len;
-	size_t 	s_len;
+	size_t	dst_len;
+	size_t	src_len;
 	size_t	i;
 	size_t	j;
 
-	d_len = ft_strlen((char*)dest);
-	s_len = ft_strlen((char*)src);
-
-	if (destsize == 0 || !dest)
-		return (0);
-	i = 0;
+	src_len = ft_strlen((char *)src);
+	if (dstsize == 0)
+		return (src_len);
+	dst_len = ft_strlen((char *)dst);
+	i = dst_len;
 	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0' && j < (destsize - 1))
+	if (dstsize < dst_len)
+		return (src_len + dstsize);
+	while (src[j] != '\0')
 	{
-		dest[i + j] = src[j];
+		dst[i] = src[j];
+		i++;
 		j++;
+		if (i == (dstsize - 1))
+			break;
 	}
-	dest[i + j] = '\0';
-	return (i + j);
+	dst[i] = '\0';
+	return (dst_len + src_len);
 }

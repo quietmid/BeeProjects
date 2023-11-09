@@ -6,7 +6,7 @@
 #    By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:24:19 by jlu               #+#    #+#              #
-#    Updated: 2023/11/07 14:06:14 by jlu              ###   ########.fr        #
+#    Updated: 2023/11/09 18:15:58 by jlu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,9 @@ SRC = ft_atoi.c \
 	  ft_strjoin.c \
 	  ft_strtrim.c \
 	  ft_split.c \
+	  ft_itoa.c \
+	  ft_strmapi.c \
+	  ft_striteri.c \
 
 BSRC = 
 

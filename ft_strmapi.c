@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 16:53:23 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/08 12:42:45 by jlu              ###   ########.fr       */
+/*   Created: 2023/11/09 16:56:24 by jlu               #+#    #+#             */
+/*   Updated: 2023/11/09 17:57:38 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memchr(const void *s, int c, size_t n)
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    size_t          i;
-    unsigned char   *str;
+    size_t  i;
+    size_t  len;
+    char    *str;
 
-    str = ((unsigned char *)s);
+    if (s == NULL)
+        return (NULL);
+    len = ft_strlen((char *)s);
+    if ((str = malloc(sizeof(char) * (len  + 1))) == NULL)
+        return (NULL);
     i = 0;
-    while ((str[i] != '\0' && str[i] != (unsigned char)c) && i < n)
-        i++;
-    if (str[i] == (unsigned char)c || ((unsigned char)c == '\0' && str[i] == '\0'))
+    while (s[i])
     {
-        return ((void *)&str[i]);
+        str[i] = ((*f)(i, s[i]));
+        i++;
     }
-    return (NULL);
+    str[i] = '\0';
+    return (str);
 }
