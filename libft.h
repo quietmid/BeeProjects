@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 22:27:36 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/08 17:37:18 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/10 16:07:25 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 # include <string.h> // take this out
 # include <stdio.h> // take this out
 
@@ -27,5 +28,6 @@ size_t  ft_strlcpy(char * restrict dest, const char * restrict src, size_t dests
 char    *ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strdup(const char *str1);
+void    ft_putchar_fd(char c, int fd);
 
 #endif

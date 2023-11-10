@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:31:14 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/07 15:13:00 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/10 18:28:48 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char    *ft_strjoin(char const *s1, char const *s2)
     size_t  i;
     size_t  j;
 
+    if (!s1)
+        return (NULL);
     len = ft_strlen((char*)s1) + ft_strlen((char*)s2);
-    str = (char *)malloc((len + 1) * sizeof(char));
-
-    if (!str)
+    if (!(str = (char *)malloc((len + 1) * sizeof(char))))
         return (NULL);
     i = 0;
     j = 0;

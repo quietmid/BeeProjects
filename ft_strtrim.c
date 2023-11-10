@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:22:37 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/03 17:35:20 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/10 18:31:16 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char    *ft_strtrim(char const *s1, char const *set)
     size_t  end;
     size_t  strlen;
 
+    if(!s1)
+        return (NULL);
     start = 0;
     while (s1[start] && ft_isinset(s1[start], set))
         start++;

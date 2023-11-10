@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:40:29 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/08 19:28:17 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/10 18:40:32 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,11 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 	j = 0;
 	if (dstsize < dst_len)
 		return (src_len + dstsize);
-	while (src[j] != '\0')
+	while (src[j] != '\0' && i < (dstsize - 1))
 	{
 		dst[i] = src[j];
 		i++;
 		j++;
-		if (i == (dstsize - 1))
-			break;
 	}
 	dst[i] = '\0';
 	return (dst_len + src_len);

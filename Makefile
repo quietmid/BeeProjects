@@ -6,7 +6,7 @@
 #    By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:24:19 by jlu               #+#    #+#              #
-#    Updated: 2023/11/09 18:15:58 by jlu              ###   ########.fr        #
+#    Updated: 2023/11/10 19:07:02 by jlu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,11 @@ SRC = ft_atoi.c \
 	  ft_itoa.c \
 	  ft_strmapi.c \
 	  ft_striteri.c \
-
+	  ft_putchar_fd.c \
+	  ft_putstr_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
+	  
 BSRC = 
 
 CC = cc
@@ -55,8 +59,6 @@ BOBJECTS = $(BSRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) $(BOBJECTS)
-	$(cc) $(CFLAGS) -c $(SRC)
-	$(cc) $(CFLAGS) -c $(BSRC)
 	ar rc $(NAME) $(OBJECTS) $(BOBJECTS)
 	ranlib $(NAME)
 
