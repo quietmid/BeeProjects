@@ -6,16 +6,16 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 22:16:21 by jlu               #+#    #+#             */
-/*   Updated: 2023/10/30 17:22:21 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/11 18:18:06 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{
