@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:59:25 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/11 19:58:06 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/12 18:12:44 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int	ft_atoi(const char *str)
 {
 	unsigned long	nb;
 	int				i;
+	unsigned long	limit;
 
+	limit = 9223372036854775807;
 	nb = 0;
 	i = 1;
 	while (((*str > 8 && *str < 14) || *str == 32))
-	{
 		str++;
-	}
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
@@ -31,9 +31,12 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		// check for overflow
 		nb = nb * 10 + (*str - 48);
 		str++;
+		if (i == 1 && nb > limit)
+			return (-1);
+		else if (i == -1 && nb > limit)
+			return (0);
 	}
 	return (nb * i);
 }
