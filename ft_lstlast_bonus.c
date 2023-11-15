@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 16:21:15 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/15 20:02:38 by jlu              ###   ########.fr       */
+/*   Created: 2023/11/15 14:33:55 by jlu               #+#    #+#             */
+/*   Updated: 2023/11/15 15:08:19 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*new;
-
-	new = NULL;
-	new = malloc(sizeof(t_list));
-	if (new != NULL)
+	if (!lst)
+		return (0);
+	while (lst->next)
 	{
-		new->content = content;
-		new->next = NULL;
+		lst = lst->next;
 	}
-	return (new);
+	return (lst);
 }
+
+/*
+return the last node of the list
+*/
