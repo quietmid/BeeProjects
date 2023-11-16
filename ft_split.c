@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:57:41 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/14 15:06:30 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/16 15:16:07 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,30 +97,3 @@ char	**ft_split(char const *str, char c)
 	}
 	return (result_strs);
 }
-//int main(void)
-//{
-//  char  str[] = "split  ||this|for|me|||||!|";
-//  char  c = '|';
-//  char **ret;
-//  int   i;
-//  int   str_count;
-
-//  i = 0;
-//  str_count = ft_str_count(str, c);
-//  ret = ft_split(str, c);
-//  printf("The string is: %s\n", str);
-//  printf("The string count is %d and the separator is %c\n", str_count, c);
-//  while (i < str_count)
-//  {
-//    printf("%s\n", ret[i]);
-//    i++;
-//  }
-//  i = 0;
-//  while (i < str_count)
-//  {
-//    free(ret[i]);
-//    i++;
-//  }
-//  free(ret);
-//  return 0;
-//}

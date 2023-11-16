@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:08:04 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/15 18:51:58 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/16 12:19:53 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	del(lst->content);
 	free(lst);
+	lst = NULL;
 }
-
-
-	//takes as a parameter a node and frees the memory of the node's content using the function `del` given as a parameter and free the node. the memory of `next` must not be freed.

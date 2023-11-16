@@ -6,7 +6,7 @@
 #    By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:24:19 by jlu               #+#    #+#              #
-#    Updated: 2023/11/11 18:53:37 by jlu              ###   ########.fr        #
+#    Updated: 2023/11/16 12:48:52 by jlu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,15 @@ SRC = ft_atoi.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
 	  
-BSRC = 
+BSRC = ft_lstnew_bonus.c \
+	   ft_lstadd_front_bonus.c \
+	   ft_lstsize_bonus.c \
+	   ft_lstlast_bonus.c \
+	   ft_lstadd_back_bonus.c \
+	   ft_lstdelone_bonus.c \
+	   ft_lstclear_bonus.c \
+	   ft_lstiter_bonus.c \
+	   ft_lstmap_bonus.c \
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -60,13 +68,15 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS) $(BOBJECTS)
 	ar rc $(NAME) $(OBJECTS) $(BOBJECTS)
-	ranlib $(NAME)
+
+bonus: $(OBJECTS) $(BOBJECTS)
+	ar rc $(NAME) $(OBJECTS) $(BOBJECTS)
 
 clean: 
 	rm -f $(OBJECTS) $(BOBJECTS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) 
 	
 re: fclean all 
 

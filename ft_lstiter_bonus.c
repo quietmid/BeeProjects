@@ -6,7 +6,7 @@
 /*   By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 17:56:36 by jlu               #+#    #+#             */
-/*   Updated: 2023/11/15 18:51:36 by jlu              ###   ########.fr       */
+/*   Updated: 2023/11/16 12:23:23 by jlu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
-/*
-	Iterates the list `lst` and applis the function `f` on the content of each node. 
-*/
