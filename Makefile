@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlu <jlu@student.42.fr>                    +#+  +:+       +#+         #
+#    By: jlu <jlu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/31 14:24:19 by jlu               #+#    #+#              #
-#    Updated: 2023/11/16 12:48:52 by jlu              ###   ########.fr        #
+#    Created: 2023/11/17 16:27:29 by jlu               #+#    #+#              #
+#    Updated: 2023/11/17 16:27:31 by jlu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,17 +67,20 @@ BOBJECTS = $(BSRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) $(BOBJECTS)
-	ar rc $(NAME) $(OBJECTS) $(BOBJECTS)
+	ar rcs $(NAME) $(OBJECTS) $(BOBJECTS)
 
-bonus: $(OBJECTS) $(BOBJECTS)
-	ar rc $(NAME) $(OBJECTS) $(BOBJECTS)
+bonus: .bonus
+
+.bonus: $(OBJECTS) $(BOBJECTS)
+	ar rcs $(NAME) $(OBJECTS) $(BOBJECTS)
+	touch .bonus
 
 clean: 
-	rm -f $(OBJECTS) $(BOBJECTS)
+	rm -f $(OBJECTS) $(BOBJECTS) .bonus
 
 fclean: clean
 	rm -f $(NAME) 
 	
 re: fclean all 
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
